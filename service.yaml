@@ -7,6 +7,6 @@ spec:
     app: static-website
   ports:
     - protocol: TCP
-      port: 80
+      port: 8000
       targetPort: 80
   type: NodePort
