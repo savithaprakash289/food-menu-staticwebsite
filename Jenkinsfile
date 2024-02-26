@@ -13,21 +13,6 @@ pipeline {
         }
       }
     }
-    pipeline {
-  agent any
-  stages {
-
-    stage('push the docker image') {
-      steps {
-        script {
-          withCredentials([string(credentialsId: 'savitha2789', variable: 'docker')]) {
-            sh 'docker login -u savitha2789 -p ${docker}'
-          }
-          sh 'docker push savitha2789/menu'
-
-        }
-      }
-    }
     stage('deploy to another instance') {
       steps {
        sshagent(['testdev']) {
